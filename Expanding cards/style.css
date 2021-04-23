@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container {
+  display: flex;
+  width: 90vw;
+  overflow: hidden;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 100px;
+  margin: 0;
+  opacity: 0;
+}
+.panel--1 {
+  background-image: url("./images/diego-gutierrez-SD8ULgflt8g-unsplash.jpg");
+}
+.panel--2 {
+  background-image: url("./images/edouard-tamba-9ZFn__BKP_s-unsplash.jpg");
+}
+.panel--3 {
+  background-image: url("./images/hossein-rezaei-dw_Gd-PSczk-unsplash.jpg");
+}
+.panel--4 {
+  background-image: url("./images/ken-cheung-gd9wFL4gcWQ-unsplash.jpg");
+}
+.panel--5 {
+  background-image: url("./images/milo-weiler-MqK33RaAPuY-unsplash.jpg");
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
