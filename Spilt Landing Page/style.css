@@ -1,0 +1,112 @@
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.7);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  font-size: 4rem;
+  color: #fff;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.split.left {
+  left: 0;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/Vgy3FfpWvBD32CYZrcNq6itGqnw=/1400x1400/filters:format(png)/cdn.vox-cdn.com/uploads/chorus_asset/file/20034840/ishMfuW.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+.split.right {
+  right: 0;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/Xbox-360S-Console-Set.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+.right,
+.left,
+.right::before,
+.left::before {
+  transition: all 100ms ease-in-out;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 20px;
+  border-radius: 30px;
+  border: 3px solid #fff;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
+}
+.btn--left:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+.btn--right:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+.hover--left .left {
+  width: var(--hover-width);
+}
+.hover--left .right {
+  width: var(--other-width);
+}
+.hover--right .right {
+  width: var(--hover-width);
+}
+.hover--right .left {
+  width: var(--other-width);
+}
